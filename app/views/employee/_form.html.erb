@@ -1,0 +1,60 @@
+<%= form_for(@employee, :html => {class: 'ui form', role: 'form'}) do |f| %>
+  <div class="ui horizontal divider">
+    User Data
+  </div>
+  <div class="two fields">
+    <div class="field">
+      <%= f.label "First Name" %>
+      <%= f.text_field :firstName, placeholder: 'Enter first name'%>
+    </div>
+    <div class="field">
+      <%= f.label "Last Name" %>
+      <%= f.text_field :lastName, placeholder: 'Enter last name'%>
+    </div>
+  </div>
+  <div class="three fields">
+    <div class="field">
+      <%= f.label "Username" %>
+      <%= f.text_field :username, placeholder: 'Enter username'%>
+    </div>
+    <div class="field">
+      <%= f.label "Email" %>
+      <%= f.email_field :email, placeholder: 'Enter email'%>
+    </div>
+    <div class="field">
+      <%= f.label "Job Title" %>
+      <%= f.text_field :job_title, placeholder: 'Enter Job Title'%>
+    </div>
+  </div>
+  <div class="ui horizontal divider">
+    Phones
+  </div>
+  <div class="three fields">
+    <div class="field">
+      <%= f.label "Extension" %>
+      <%= f.number_field :ext, placeholder: 'Enter Extension'%>
+    </div>
+    <div class="field">
+      <%= f.label "Direct Phone" %>
+      <%= f.text_field :directPhone, placeholder: 'Enter last name'%>
+    </div>
+    <div class="field">
+      <%= f.label "Direct Fax" %>
+      <%= f.text_field :directFax, placeholder: 'Enter last name'%>
+    </div>
+  </div>
+  <div class="ui horizontal divider">
+    Aniversary - Birthday
+  </div>
+  <div class="two fields">
+    <div class="field">
+      <%= f.label "DOB" %>
+      <%= f.date_field :dob %>
+    </div>
+    <div class="field">
+      <%= f.label "Anniversary" %>
+      <%= f.date_field :anniversary %>
+    </div>
+  </div>
+  <%= f.submit(@employee.new_record? ? "Add Employee" : "Update Employee", class: "ui submit button") %>
+  <% end %>

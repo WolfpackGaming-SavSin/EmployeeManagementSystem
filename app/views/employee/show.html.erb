@@ -1,0 +1,28 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular user blue icon"></i>
+  <%= @employee.firstName.capitalize %> <%= @employee.lastName.capitalize %>
+</h2>
+
+<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="info">Info</a>
+  <a class="item" data-tab="locations">Locations</a>
+  <a class="item" data-tab="security">Security</a>
+  <a class="item" data-tab="applications">Applications</a>
+  <a class="item" data-tab="osha">OSHA</a>
+</div>
+<div class="ui bottom attached tab segment active" data-tab="info">
+  <%= render 'formro' %>
+  <%= link_to "Click To Edit", edit_employee_path(@employee), class: "ui submit button" %>
+</div>
+<div class="ui bottom attached tab segment" data-tab="locations">
+  Locations
+</div>
+<div class="ui bottom attached tab segment" data-tab="security">
+  Security
+</div>
+<div class="ui bottom attached tab segment" data-tab="applications">
+  Applications
+</div>
+<div class="ui bottom attached tab segment" data-tab="osha">
+  OSHA
+</div>

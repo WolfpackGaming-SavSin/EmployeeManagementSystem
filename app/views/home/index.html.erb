@@ -1,0 +1,27 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular blue users icon"></i>
+  Employee Management System
+</h2>
+
+<table class="ui striped selectable celled table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>E-mail</th>
+            <th>Extension</th>
+            <th>directPhone</th>
+            <th>directFax</th>
+            <th>dob</th>
+            <th>Admin</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render @employees %>
+    </tbody>
+</table>
+
+<div align="center">
+    <%= will_paginate @employees %>
+</div>
