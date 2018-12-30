@@ -13,7 +13,4 @@ class Employee < ApplicationRecord
                         uniqueness: { case_sensitive: false },
                         length: { maximum: 105 },
                         format: { with: VALID_EMAIL_REGEX }
-                        
-    # scope :status, -> (status) { where status: status }
-    # scope :starts_with, -> (firstName) { where("firstName like ?", "#{firstName}%") }
 end

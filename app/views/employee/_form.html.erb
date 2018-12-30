@@ -56,5 +56,9 @@
       <%= f.date_field :anniversary %>
     </div>
   </div>
-  <%= f.submit(@employee.new_record? ? "Add Employee" : "Update Employee", class: "ui submit button") %>
+  <div class="ui buttons">
+    <%= link_to "Cancel", employee_path(@employee), class: "ui button" %>
+    <div class="or"></div>
+    <%= f.submit(@employee.new_record? ? "Add Employee" : "Update Employee", class: "ui positive button") %>
+  </div>
   <% end %>

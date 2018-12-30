@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_12_29_220351) do
     t.datetime "updated_at", null: false
     t.string "job_title"
     t.date "anniversary"
-    t.boolean "status", default: false
+    t.boolean "status", default: true
   end
 
   create_table "users", force: :cascade do |t|

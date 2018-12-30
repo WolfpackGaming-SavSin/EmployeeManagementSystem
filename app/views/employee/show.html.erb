@@ -12,7 +12,11 @@
 </div>
 <div class="ui bottom attached tab segment active" data-tab="info">
   <%= render 'formro' %>
-  <%= link_to "Click To Edit", edit_employee_path(@employee), class: "ui submit button" %>
+  <div class="ui buttons">
+    <%= link_to "Go Back", root_path, class: "ui button" %>
+    <div class="or"></div>
+    <%= link_to "Edit", edit_employee_path(@employee), class: "ui positive button" %>
+  </div>
 </div>
 <div class="ui bottom attached tab segment" data-tab="locations">
   Locations

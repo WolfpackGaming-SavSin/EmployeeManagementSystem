@@ -1,6 +1,9 @@
 class EmployeeController < ApplicationController
-    
     before_action :find_employee, only: [:edit, :update, :show, :destroy]
+    
+    def index
+        @employees = Employee.paginate(page: params[:page], per_page: 2)
+    end
     
     def new
         @employee = Employee.new
