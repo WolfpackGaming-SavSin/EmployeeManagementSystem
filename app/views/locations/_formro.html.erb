@@ -1,0 +1,29 @@
+<%= form_for(@location, :html => {class: 'ui form', role: 'form'}) do |f| %>
+    <h4 class="ui dividing header">Location Information</h4>
+    <div class="field">
+        <%= f.label "Name" %>
+        <div class="field">
+            <%= f.text_field :locationName, readonly: "", placeholder: 'Enter name of location...'%>
+        </div>
+    </div>
+    <div class="field">
+        <%= f.label "Street Address" %>
+        <div class="fields">
+            <div class="twelve  wide field">
+                <%= f.text_field :streetAddress, readonly: "", placeholder: 'Enter name of location...'%>
+            </div>
+            <div class="two wide field">
+                <%= f.text_field :suite, readonly: "", placeholder: 'Enter name of location...'%>
+            </div>
+            <div class="two wide field">
+                <%= f.number_field :zipCode, readonly: "", placeholder: 'Enter Zip Code...'%>
+            </div>
+        </div>
+    </div>
+    <div class="fields">
+        <div class="ui toggle checkbox">
+            <%= f.check_box :status, readonly: "", class: "hidden" %>
+            <%= f.label "Enabled" %>
+        </div>
+    </div>
+<% end %>

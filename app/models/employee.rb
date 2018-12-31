@@ -1,4 +1,5 @@
 class Employee < ApplicationRecord
+    has_and_belongs_to_many :locations
     before_save{ self.email = email.downcase }
     before_save{ self.firstName = firstName.downcase }
     before_save{ self.lastName = lastName.downcase }
@@ -7,6 +8,12 @@ class Employee < ApplicationRecord
     
     validates :username, presence: true,
                             uniqueness: { case_sensitive: false }
+                            
+    validates :firstName, presence: true
+                            
+    validates :lastName, presence: true
+                            
+    validates :job_title, presence: true
     
     VALID_EMAIL_REGEX = /\A[a-zA-Z0-9.!\#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\z/i
     validates :email, presence: true,

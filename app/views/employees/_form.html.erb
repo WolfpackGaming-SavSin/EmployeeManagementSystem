@@ -57,7 +57,11 @@
     </div>
   </div>
   <div class="ui buttons">
-    <%= link_to "Cancel", employee_path(@employee), class: "ui button" %>
+    <% if @employee.new_record? %>
+      <%= link_to "Cancel", root_path, class: "ui button" %>
+    <% else %>
+      <%= link_to "Cancel", employee_path(@employee), class: "ui button" %>
+    <% end %>
     <div class="or"></div>
     <%= f.submit(@employee.new_record? ? "Add Employee" : "Update Employee", class: "ui positive button") %>
   </div>

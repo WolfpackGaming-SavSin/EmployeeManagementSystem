@@ -1,0 +1,9 @@
+<tr>
+    <td><%= location.locationName.capitalize %></td>
+    <td><%= location.streetAddress.capitalize %></td>
+    <td><%= location.suite %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.zipCode %></td>
+    <td><%= link_to "View", location_path(location.id) %></td>
+</tr>

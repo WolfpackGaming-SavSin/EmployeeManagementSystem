@@ -6,22 +6,20 @@
 <table class="ui striped selectable celled table">
     <thead>
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Extension</th>
-            <th>directPhone</th>
-            <th>directFax</th>
-            <th>dob</th>
+            <th>Location Name</th>
+            <th>Street Address</th>
+            <th>Suite</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
             <th>Admin</th>
         </tr>
     </thead>
     <tbody>
-        <%= render @employees %>
+        <%= render @locations %>
     </tbody>
 </table>
 
 <div align="center">
-    <%= will_paginate @employees %>
+    <%= will_paginate @locations %>
 </div>
