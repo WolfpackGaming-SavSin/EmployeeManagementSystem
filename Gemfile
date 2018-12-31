@@ -10,6 +10,7 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 # Use Devise for user Authentication
 gem 'devise'
+# gem 'devise_invitable', '~> 1.7.0'
 gem 'devise-semantified', git: 'https://github.com/ajex13/devise-semantified.git'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
