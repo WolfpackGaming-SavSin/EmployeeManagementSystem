@@ -12,10 +12,18 @@
             <div class="twelve  wide field">
                 <%= f.text_field :streetAddress, readonly: "", placeholder: 'Enter name of location...'%>
             </div>
-            <div class="two wide field">
+            <div class="four wide field">
                 <%= f.text_field :suite, readonly: "", placeholder: 'Enter name of location...'%>
             </div>
-            <div class="two wide field">
+        </div>
+        
+    </div>
+    <div class="field">
+        <div  class="fields">
+            <div class="twelve wide field">
+                <%= f.text_field :city, readonly: "", placeholder: 'Enter City...'%>
+            </div>
+            <div class="twelve wide field">
                 <%= f.number_field :zipCode, readonly: "", placeholder: 'Enter Zip Code...'%>
             </div>
         </div>

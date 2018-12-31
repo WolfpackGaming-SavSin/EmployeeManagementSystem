@@ -1,0 +1,17 @@
+<%= form_for @employee, html: { class: 'ui form', role: 'form'} do |f| %>
+  <div class="grouped fields">
+        <%= f.collection_check_boxes :location_ids, Location.all, :id, :locationName  do |b| %>
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <%= b.check_box %>
+              <%= b.label %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="ui buttons">
+    <%= link_to "Cancel", employee_path(@employee), class: "ui button" %>
+    <div class="or"></div>
+    <%= f.submit("Update Employee", class: "ui positive button") %>
+  </div>
+<% end %>

@@ -8,25 +8,26 @@
   <a class="item" data-tab="locations">Locations</a>
   <a class="item" data-tab="security">Security</a>
   <a class="item" data-tab="applications">Applications</a>
-  <a class="item" data-tab="osha">OSHA</a>
+  <a class="item" data-tab="compliance">Compliance</a>
 </div>
 <div class="ui bottom attached tab segment active" data-tab="info">
-  <%= render 'formro' %>
-  <div class="ui buttons">
-    <%= link_to "Go Back", root_path, class: "ui button" %>
-    <div class="or"></div>
-    <%= link_to "Edit", edit_employee_path(@employee), class: "ui positive button" %>
-  </div>
+  <%= render 'employees/partials/emp_info' %>
 </div>
 <div class="ui bottom attached tab segment" data-tab="locations">
-  Locations
+  <%= render 'employees/partials/loc_info' %>
 </div>
 <div class="ui bottom attached tab segment" data-tab="security">
-  Security
+  <%= render 'employees/partials/sec_info' %>
 </div>
 <div class="ui bottom attached tab segment" data-tab="applications">
-  Applications
+  <%= render 'employees/partials/app_info' %>
 </div>
-<div class="ui bottom attached tab segment" data-tab="osha">
-  OSHA
+<div class="ui bottom attached tab segment" data-tab="compliance">
+  <%= render 'employees/partials/compliance_info' %>
+</div>
+
+<div class="ui buttons">
+  <%= link_to "Go Back", root_path, class: "ui button" %>
+  <div class="or"></div>
+  <%= link_to "Edit", edit_employee_path(@employee), class: "ui positive button" %>
 </div>

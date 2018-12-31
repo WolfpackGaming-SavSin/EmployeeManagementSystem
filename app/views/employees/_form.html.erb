@@ -56,6 +56,26 @@
       <%= f.date_field :anniversary %>
     </div>
   </div>
+  <div class="fields">
+      <div class="ui toggle checkbox">
+          <%= f.check_box :status, class: "hidden" %>
+          <%= f.label "Employee Status" %>
+      </div>
+  </div>
+  
+  <div class="ui horizontal divider">
+    Locations
+  </div>
+  <div class="fields">
+    <%= f.collection_check_boxes :location_ids, Location.all, :id, :locationName  do |b| %>
+      <div class="field">
+        <div class="ui checkbox">
+          <%= b.check_box %> <%= b.label %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
   <div class="ui buttons">
     <% if @employee.new_record? %>
       <%= link_to "Cancel", root_path, class: "ui button" %>

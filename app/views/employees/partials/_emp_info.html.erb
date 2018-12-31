@@ -56,4 +56,10 @@
       <%= f.date_field :anniversary, readonly: "" %>
     </div>
   </div>
-  <% end %>
+  <div class="fields">
+      <div class="ui toggle checkbox">
+          <%= f.check_box :status, readonly: "", class: "hidden" %>
+          <%= f.label "Employee Status" %>
+      </div>
+  </div>
+<% end %>

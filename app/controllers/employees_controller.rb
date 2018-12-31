@@ -2,7 +2,8 @@ class EmployeesController < ApplicationController
     before_action :find_employee, only: [:edit, :update, :show, :destroy]
     
     def index
-        @employees = Employee.paginate(page: params[:page], per_page: 2)
+        @employees = Employee.paginate(page: params[:page], per_page: 20)
+        @locations = Location.all
     end
     
     def new
@@ -28,6 +29,7 @@ class EmployeesController < ApplicationController
             flash[:success] = "Employee updated successfully"
             redirect_to employee_path(@employee)
         else
+            flash[:error] = "Oops Something went wrong try again"
             render 'edit'
         end
     end
@@ -42,7 +44,7 @@ class EmployeesController < ApplicationController
     
     private
         def employee_params
-            params.require(:employee).permit(:firstName, :lastName, :username, :email, :ext, :directPhone, :directFax, :dob, :job_title, :anniversary)
+            params.require(:employee).permit(:firstName, :lastName, :username, :email, :ext, :directPhone, :directFax, :dob, :job_title, :anniversary, :status, location_ids: [])
         end
         
         def find_employee
