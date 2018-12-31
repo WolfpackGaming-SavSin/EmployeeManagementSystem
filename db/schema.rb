@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_213950) do
+ActiveRecord::Schema.define(version: 2018_12_31_220112) do
 
   create_table "applications", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "applications_employees", id: false, force: :cascade do |t|
+    t.integer "application_id", null: false
+    t.integer "employee_id", null: false
+    t.index ["application_id", "employee_id"], name: "index_applications_employees_on_application_id_and_employee_id"
+    t.index ["employee_id", "application_id"], name: "index_applications_employees_on_employee_id_and_application_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -40,6 +47,13 @@ ActiveRecord::Schema.define(version: 2018_12_31_213950) do
     t.integer "location_id", null: false
     t.index ["employee_id", "location_id"], name: "index_employees_locations_on_employee_id_and_location_id"
     t.index ["location_id", "employee_id"], name: "index_employees_locations_on_location_id_and_employee_id"
+  end
+
+  create_table "employees_securities", id: false, force: :cascade do |t|
+    t.integer "security_id", null: false
+    t.integer "employee_id", null: false
+    t.index ["employee_id", "security_id"], name: "index_employees_securities_on_employee_id_and_security_id"
+    t.index ["security_id", "employee_id"], name: "index_employees_securities_on_security_id_and_employee_id"
   end
 
   create_table "locations", force: :cascade do |t|

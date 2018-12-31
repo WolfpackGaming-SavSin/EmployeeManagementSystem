@@ -1,0 +1,15 @@
+<%= form_for(@application, :html => {class: 'ui form', role: 'form'}) do |f| %>
+    <h4 class="ui dividing header">Application Information</h4>
+    <div class="field">
+        <%= f.label "Name" %>
+        <div class="field">
+            <%= f.text_field :name, readonly: "", placeholder: 'Enter name of the application...'%>
+        </div>
+    </div>
+    <div class="field">
+        <%= f.label "Description" %>
+        <div class="field">
+            <%= f.text_field :description, readonly: "", placeholder: 'Enter a description of the application'%>
+        </div>
+    </div>
+<% end %>

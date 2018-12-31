@@ -44,7 +44,7 @@ class EmployeesController < ApplicationController
     
     private
         def employee_params
-            params.require(:employee).permit(:firstName, :lastName, :username, :email, :ext, :directPhone, :directFax, :dob, :job_title, :anniversary, :status, location_ids: [])
+            params.require(:employee).permit(:firstName, :lastName, :username, :email, :ext, :directPhone, :directFax, :dob, :job_title, :anniversary, :status, location_ids: [], security_ids: [], application_ids: [])
         end
         
         def find_employee

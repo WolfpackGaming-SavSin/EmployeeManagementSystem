@@ -1,0 +1,15 @@
+<%= form_for(@security, :html => {class: 'ui form', role: 'form'}) do |f| %>
+    <h4 class="ui dividing header">Security Information</h4>
+    <div class="field">
+        <%= f.label "Name" %>
+        <div class="field">
+            <%= f.text_field :name %>
+        </div>
+    </div>
+    <div class="field">
+        <%= f.label "Description" %>
+        <div class="field">
+            <%= f.text_field :description %>
+        </div>
+    </div>
+<% end %>

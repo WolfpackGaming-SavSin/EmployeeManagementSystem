@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root to: "employees#index"
   resources :employees
   resources :locations
+  resources :securities
+  resources :applications
 end

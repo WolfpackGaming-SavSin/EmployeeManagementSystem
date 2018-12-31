@@ -1,0 +1,21 @@
+<h2 class="ui center aligned icon header">
+    <i class="circular blue window maximize outline icon"></i>
+    Applications
+</h2>
+
+<table class="ui striped selectable celled table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Admin</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render @applications %>
+    </tbody>
+</table>
+
+<div align="center">
+    <%= will_paginate @applications %>
+</div>

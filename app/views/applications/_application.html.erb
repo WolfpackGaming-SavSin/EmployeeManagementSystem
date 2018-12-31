@@ -1,0 +1,8 @@
+<tr>
+    <td><%= application.name %></td>
+    <td><%= application.description %></td>
+    <td>
+        <%= link_to "View", application_path(application.id) %> | 
+        <%= link_to "Delete", application_path(application.id), method: :delete, data: { confirm: "Are you sure you want to delte this application?"} %>
+    </td>
+</tr>

@@ -1,1 +1,16 @@
-Application
+<table class="ui striped selectable celled table">
+    <thead>
+      <tr>
+        <th>Application Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employee.applications.each do |apps| %>
+        <tr>
+          <td><%= apps.name %></td>
+          <td><%= apps.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

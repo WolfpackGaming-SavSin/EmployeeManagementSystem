@@ -1,5 +1,8 @@
 class Employee < ApplicationRecord
     has_and_belongs_to_many :locations
+    has_and_belongs_to_many :securities
+    has_and_belongs_to_many :applications
+    
     before_save{ self.email = email.downcase }
     before_save{ self.firstName = firstName.downcase }
     before_save{ self.lastName = lastName.downcase }
