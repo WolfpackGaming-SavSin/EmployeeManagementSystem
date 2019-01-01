@@ -28,4 +28,6 @@ Ruby Version - 2.5.3
 Rails Version - 5.2.2
 
 ## Contributing
-[![Code Triage Badge] (https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system/badges/users.svg)](https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system)
+<a href="https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system">
+    <img src="https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system/badges/users.svg" alt="CodeTriage badge" />
+</a>
