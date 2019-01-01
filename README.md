@@ -1,4 +1,7 @@
 # Employee Management System
+<a href="https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system">
+    <img src="https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system/badges/users.svg" alt="CodeTriage badge" />
+</a>
 
 > In today's world there are so many different departments that manage employee information. With that level of complexity comes an interesting problem. Who is responsible for keeping track of these changes?
 
@@ -28,6 +31,4 @@ Ruby Version - 2.5.3
 Rails Version - 5.2.2
 
 ## Contributing
-<a href="https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system">
-    <img src="https://www.codetriage.com/wolfpackgaming-savsin/employee_management_system/badges/users.svg" alt="CodeTriage badge" />
-</a>
+You are more than welcome to fork this project and contribute. This was orignally started to learn Rails development and test how far I can go into this type of system. Feel free to do with this as you wish.
