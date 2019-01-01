@@ -16,6 +16,13 @@ rails s
 ```
 Your app should now be running on your local host. Rember that if you are using a cloud IDE such as C9.io or AWS Cloud9 you follow their instructions to start the server.
 
+## ToDo List
+    1. Implement Authorization via pundit gem
+    2. Implement PDF System for various needs (reports, new hire docs, etc.) via Prawn
+    3. Implement Search Features via Scopes
+    4. Implement Scopes based on Authorization
+    5. I'll think of something I'm sure!
+
 ## Dependancies
 Ruby Version - 2.5.3
 Rails Version - 5.2.2
