@@ -16,7 +16,11 @@
 
 <div class="right menu">
     <div class="ui dropdown item">
-        Account <i class="dropdown icon"></i>
+        <% if user_signed_in? %>
+            <%= current_user.email %> <i class="dropdown icon"></i>
+        <% else %>
+            Account <i class="dropdown icon"></i>
+        <% end %>
         <div class="menu">
             <% if user_signed_in? %>
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "item" %>
@@ -25,9 +29,9 @@
             <% end %>
         </div>
     </div>
-    <% if !user_signed_in? %>
-        <div class="item">
-            <%= link_to "Sign up", new_user_registration_path, class: "ui primary button" %>
-        </div>
-    <% end %>
+    <!--<% if !user_signed_in? %>-->
+    <!--    <div class="item">-->
+    <!--        <%= link_to "Sign up", new_user_registration_path, class: "ui primary button" %>-->
+    <!--    </div>-->
+    <!--<% end %>-->
 </div>
