@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_01_094147) do
+ActiveRecord::Schema.define(version: 2019_01_02_062852) do
 
   create_table "applications", force: :cascade do |t|
     t.string "name", null: false
@@ -56,13 +56,6 @@ ActiveRecord::Schema.define(version: 2019_01_01_094147) do
     t.index ["security_id", "employee_id"], name: "index_employees_securities_on_security_id_and_employee_id"
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "locations", force: :cascade do |t|
     t.string "locationName", null: false
     t.string "streetAddress", null: false
@@ -78,13 +71,6 @@ ActiveRecord::Schema.define(version: 2019_01_01_094147) do
   create_table "securities", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_groups", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
