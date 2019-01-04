@@ -1,4 +1,6 @@
 class SecuritiesController < ApplicationController
+    include Pundit
+    
     before_action :find_security, only: [:edit, :update, :show, :destroy]
     
     def index
@@ -7,10 +9,12 @@ class SecuritiesController < ApplicationController
     
     def new
         @security = Security.new
+        authorize @security
     end
     
     def create
         @security = Security.new(security_params)
+        authorize @security
         if @security.save
             flash[:success] = "Security added successfully"
             redirect_to securities_path
@@ -20,9 +24,11 @@ class SecuritiesController < ApplicationController
     end
     
     def edit
+        authorize @security
     end
     
     def update
+        authorize @security
         if @security.update(security_params)
             flash[:success] = "Security updated successfully"
             redirect_to security_path(@security)
@@ -35,8 +41,9 @@ class SecuritiesController < ApplicationController
     end
     
     def destroy
+        authorize @security
         @security.destroy
-        flash[:danger] = "Security Type has been deleted"
+        flash[:error] = "Security Type has been deleted"
         redirect_to securities_path
     end
     

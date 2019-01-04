@@ -12,7 +12,7 @@
     <tbody>
       <% @employee.locations.each do |loc| %>
         <tr>
-          <td><%= loc.locationName.capitalize %></td>
+          <td><%= loc.name.capitalize %></td>
           <td><%= loc.streetAddress.capitalize %></td>
           <td><%= loc.suite %></td>
           <td><%= loc.city %></td>

@@ -1,11 +1,15 @@
 <tr>
     <td><%= employee.firstName.capitalize %></td>
     <td><%= employee.lastName.capitalize %></td>
-    <td><%= employee.username %></td>
     <td><%= employee.email %></td>
-    <td><%= employee.ext %></td>
-    <td><%= employee.directPhone %></td>
-    <td><%= employee.directFax %></td>
-    <td><%= employee.dob%></td>
+    <td><%= employee.job_title %></td>
+    <td>
+        <div class="ui mini horizontal divided list">
+            <% employee.locations.each do |loc| %>
+                <div clas="item"><%= loc.name %></div>
+            <% end %>
+        </div>
+    </td>
+    <td><%= employee.status %></td>
     <td><%= link_to "View", employee_path(employee.id) %></td>
 </tr>
