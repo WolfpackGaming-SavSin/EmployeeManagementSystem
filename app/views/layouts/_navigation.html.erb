@@ -1,5 +1,12 @@
 <%= link_to "Home", root_path, class: "item" %>
 <% if user_signed_in? %>
+    <div class="ui dropdown item">
+        Employees<i class="dropdown icon"></i>
+        <div class="menu">
+            <%= link_to "Roster", employees_path, class: "item" %>
+            <%= link_to "Disabled", employees_disabled_path, class: "item" %>
+        </div>
+    </div>
     <a class="item">
     Reports
     </a>
@@ -29,9 +36,9 @@
             <% end %>
         </div>
     </div>
-    <!--<% if !user_signed_in? %>-->
-    <!--    <div class="item">-->
-    <!--        <%= link_to "Sign up", new_user_registration_path, class: "ui primary button" %>-->
-    <!--    </div>-->
-    <!--<% end %>-->
+    <% if !user_signed_in? %>
+        <div class="item">
+            <%= link_to "Sign up", new_user_registration_path, class: "ui primary button" %>
+        </div>
+    <% end %>
 </div>

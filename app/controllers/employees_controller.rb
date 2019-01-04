@@ -2,8 +2,12 @@ class EmployeesController < ApplicationController
     before_action :find_employee, only: [:edit, :update, :show, :destroy]
     
     def index
-        @employees = Employee.paginate(page: params[:page], per_page: 20)
-        @locations = Location.all
+        @employees = Employee.where(status: true).paginate(page: params[:page], per_page: 20)
+    end
+    
+    def index_disabled
+        @employees = Employee.where(status: false).paginate(page: params[:page], per_page: 20)
+        render 'index'
     end
     
     def new

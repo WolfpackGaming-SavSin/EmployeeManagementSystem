@@ -10,6 +10,6 @@ class User < ApplicationRecord
          
     private
         def assign_default_group
-            self.groups << Group.find_by_name("User")
+            self.role = "User"
         end
 end
