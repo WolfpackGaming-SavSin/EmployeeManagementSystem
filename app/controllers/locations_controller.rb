@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+    include Pundit
+    
     before_action :find_location, only: [:edit, :update, :show, :destroy]
     
     def index
@@ -7,10 +9,12 @@ class LocationsController < ApplicationController
     
     def new
         @location = Location.new
+        authorize @location
     end
     
     def create
-        @location = Location.new(location_params)
+        @location = Location.new(permitted_attributes(@location))
+        authorize @location
         if @location.save
             flash[:success] = "Location added successfully"
             redirect_to locations_path
@@ -20,10 +24,12 @@ class LocationsController < ApplicationController
     end
     
     def edit
+        authorize @location
     end
     
     def update
-        if @location.update(location_params)
+        authorize @location
+        if @location.update(permitted_attributes(@location))
             flash[:success] = "Location updated successfully"
             redirect_to location_path(@location)
         else
@@ -40,10 +46,6 @@ class LocationsController < ApplicationController
     end
     
     private
-        def location_params
-            params.require(:location).permit(:locationName, :streetAddress, :city, :state, :zipCode, :status, :suite)
-        end
-        
         def find_location
             @location = Location.find(params[:id])
         end

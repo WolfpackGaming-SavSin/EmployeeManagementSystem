@@ -1,8 +1,14 @@
 class EmployeesController < ApplicationController
+    include Pundit
+    
     before_action :find_employee, only: [:edit, :update, :show, :destroy]
     
     def index
+<<<<<<< HEAD
         @employees = Employee.where(status: true).paginate(page: params[:page], per_page: 20)
+=======
+        @employees = policy_scope(Employee).paginate(page: params[:page], per_page: 20)
+>>>>>>> ImplementPundit
     end
     
     def index_disabled
@@ -12,10 +18,12 @@ class EmployeesController < ApplicationController
     
     def new
         @employee = Employee.new
+        authorize @employee
     end
     
     def create
-        @employee = Employee.new(employee_params)
+        @employee = Employee.new(permitted_attributes(@employee))
+        authorize @employee
         if @employee.save
             flash[:success] = "Employee, #{@employee.username} has been created"
             redirect_to root_path
@@ -25,11 +33,12 @@ class EmployeesController < ApplicationController
     end
     
     def edit
-        
+        authorize @employee
     end
     
     def update
-        if @employee.update(employee_params)
+        authorize @employee
+        if @employee.update(permitted_attributes(@employee))
             flash[:success] = "Employee updated successfully"
             redirect_to employee_path(@employee)
         else
@@ -47,10 +56,6 @@ class EmployeesController < ApplicationController
     end
     
     private
-        def employee_params
-            params.require(:employee).permit(:firstName, :lastName, :username, :email, :ext, :directPhone, :directFax, :dob, :job_title, :anniversary, :status, location_ids: [], security_ids: [], application_ids: [])
-        end
-        
         def find_employee
             @employee = Employee.find(params[:id])
         end

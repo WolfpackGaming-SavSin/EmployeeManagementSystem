@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :employees
   resources :locations
   resources :securities
-  resources :applications
+  resources :programs
+  get "disabled/employees", to: "employees#index_disabled"
 end

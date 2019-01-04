@@ -1,5 +1,6 @@
 <%= link_to "Home", root_path, class: "item" %>
 <% if user_signed_in? %>
+<<<<<<< HEAD
     <div class="ui dropdown item">
         Employees<i class="dropdown icon"></i>
         <div class="menu">
@@ -10,15 +11,32 @@
     <a class="item">
     Reports
     </a>
+=======
+    <%= link_to "Reports", root_path, class: "item" if current_user.admin? or current_user.moderator?%>
+>>>>>>> ImplementPundit
     <div class="ui dropdown item">
-        New <i class="dropdown icon"></i>
+        View <i class="dropdown icon"></i>
         <div class="menu">
-            <%= link_to "Employee", new_employee_path, class: "item" %>
-            <%= link_to "Location", new_location_path, class: "item" %>
-            <%= link_to "Security", new_security_path, class: "item" %>
-            <%= link_to "Application", new_application_path, class: "item" %>
+            <%= link_to "Employees", employees_path, class: "item" %>
+            <% if current_user.admin? %>
+                <%= link_to "Disabled Employees", disabled_employees_path, class: "item" %>
+            <% end %>
+            <%= link_to "Locations", locations_path, class: "item" %>
+            <%= link_to "Securities", securities_path, class: "item" %>
+            <%= link_to "Applications", programs_path, class: "item" %>
         </div>
     </div>
+    <% if current_user.admin? %>
+        <div class="ui dropdown item">
+            New <i class="dropdown icon"></i>
+            <div class="menu">
+                <%= link_to "Employee", new_employee_path, class: "item" %>
+                <%= link_to "Location", new_location_path, class: "item" %>
+                <%= link_to "Security", new_security_path, class: "item" %>
+                <%= link_to "Application", new_program_path, class: "item" %>
+            </div>
+        </div>
+    <% end %>
 <% end %>
 
 <div class="right menu">

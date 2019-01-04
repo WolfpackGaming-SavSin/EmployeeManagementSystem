@@ -1,17 +1,21 @@
-class ApplicationsController < ApplicationController
+class ProgramsController < ApplicationController
+    include Pundit
+    
     before_action :find_application, only: [:edit, :update, :show, :destroy]
     
     def index
-        @applications = Application.paginate(page: params[:page], per_page: 10)
+        @programs = Program.paginate(page: params[:page], per_page: 10)
     end
     
     def new
-        @application = Application.new
+        @program = Program.new
+        authorize @program
     end
     
     def create
-        @application = Application.new(application_params)
-        if @application.save
+        @program = Program.new(application_params)
+        authorize @program
+        if @program.save
             flash[:success] = "Application added successfully"
             redirect_to applications_path
         else
@@ -20,12 +24,14 @@ class ApplicationsController < ApplicationController
     end
     
     def edit
+        authorize @program
     end
     
     def update
-        if @application.update(application_params)
+        authorize @program
+        if @program.update(application_params)
             flash[:success] = "Application updated successfully"
-            redirect_to application_path(@application)
+            redirect_to application_path(@program)
         else
             render 'edit'
         end
@@ -35,9 +41,10 @@ class ApplicationsController < ApplicationController
     end
     
     def destroy
-        @application.destroy
-        flash[:danger] = "Application Type has been deleted"
-        redirect_to applications_path
+        authorize @program
+        @program.destroy
+        flash[:error] = "Application Type has been deleted"
+        redirect_to programs_path
     end
     
     private
@@ -46,6 +53,6 @@ class ApplicationsController < ApplicationController
         end
         
         def find_application
-            @application = Application.find(params[:id])
+            @program = Program.find(params[:id])
         end
 end

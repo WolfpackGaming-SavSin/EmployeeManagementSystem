@@ -1,11 +1,13 @@
 <h2 class="ui center aligned icon header">
   <i class="circular building blue icon"></i>
-  <%= @location.locationName.capitalize %>
+  <%= @location.name.capitalize %>
 </h2>
 
 <%= render 'formro' %>
 <div class="ui buttons">
   <%= link_to "Go Back", locations_path, class: "ui button" %>
-  <div class="or"></div>
-  <%= link_to "Edit", edit_location_path(@location), class: "ui positive button" %>
+  <% if current_user.admin? or current_user_moderator? %>
+    <div class="or"></div>
+    <%= link_to "Edit", edit_location_path(@location), class: "ui positive button" %>
+  <% end %>
 </div>

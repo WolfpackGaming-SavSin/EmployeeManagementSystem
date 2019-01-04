@@ -31,3 +31,27 @@
 
 en:
   hello: "Hello world"
+
+en:
+    pundit:
+        default: 'You cannot perform this action.'
+        employee_policy:
+            update?: 'You are not authorized to edit this employee record'
+            create?: 'You are not authorized to create an employee record'
+            new?: 'You are not authorized to create an employee record'
+            edit?: 'You are not authorized to edit an employee record'
+        location_policy:
+            update?: 'You are not authorized to edit this location'
+            create?: 'You are not authorized to create a location'
+            new?: 'You are not authorized to create a location'
+            edit?: 'You are not authorized to edit a location'
+        security_policy:
+            update?: 'You are not authorized to edit this security type'
+            create?: 'You are not authorized to create a security type'
+            new?: 'You are not authorized to create a security type'
+            edit?: 'You are not authorized to edit a security type'
+        program_policy:
+            update?: 'You are not authorized to edit this application record'
+            create?: 'You are not authorized to create an application record'
+            new?: 'You are not authorized to create an application record'
+            edit?: 'You are not authorized to edit an application record'

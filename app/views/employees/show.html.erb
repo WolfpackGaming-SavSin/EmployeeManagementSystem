@@ -28,6 +28,8 @@
 
 <div class="ui buttons">
   <%= link_to "Go Back", root_path, class: "ui button" %>
-  <div class="or"></div>
-  <%= link_to "Edit", edit_employee_path(@employee), class: "ui positive button" %>
+  <% if current_user.admin? or current_user.moderator? %>
+    <div class="or"></div>
+    <%= link_to "Edit", edit_employee_path(@employee), class: "ui positive button" %>
+  <% end %>
 </div>
