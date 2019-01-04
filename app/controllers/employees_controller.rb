@@ -4,11 +4,7 @@ class EmployeesController < ApplicationController
     before_action :find_employee, only: [:edit, :update, :show, :destroy]
     
     def index
-<<<<<<< HEAD
-        @employees = Employee.where(status: true).paginate(page: params[:page], per_page: 20)
-=======
         @employees = policy_scope(Employee).paginate(page: params[:page], per_page: 20)
->>>>>>> ImplementPundit
     end
     
     def index_disabled

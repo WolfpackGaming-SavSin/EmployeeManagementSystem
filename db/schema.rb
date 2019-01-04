@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_01_02_063024) do
-
-  create_table "applications", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-=======
 ActiveRecord::Schema.define(version: 2019_01_04_072747) do
->>>>>>> ImplementPundit
 
   create_table "applications_employees", id: false, force: :cascade do |t|
     t.integer "application_id", null: false
@@ -108,11 +97,7 @@ ActiveRecord::Schema.define(version: 2019_01_04_072747) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.string "role"
-=======
     t.integer "role"
->>>>>>> ImplementPundit
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

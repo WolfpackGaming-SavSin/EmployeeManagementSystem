@@ -27,6 +27,8 @@ Your app should now be running on your local host. Rember that if you are using 
     5. I'll think of something I'm sure!
 
 ## Dependancies
+Devise
+Pundit
 Ruby Version - 2.5.3
 Rails Version - 5.2.2
 

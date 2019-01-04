@@ -1,19 +1,6 @@
 <%= link_to "Home", root_path, class: "item" %>
 <% if user_signed_in? %>
-<<<<<<< HEAD
-    <div class="ui dropdown item">
-        Employees<i class="dropdown icon"></i>
-        <div class="menu">
-            <%= link_to "Roster", employees_path, class: "item" %>
-            <%= link_to "Disabled", employees_disabled_path, class: "item" %>
-        </div>
-    </div>
-    <a class="item">
-    Reports
-    </a>
-=======
     <%= link_to "Reports", root_path, class: "item" if current_user.admin? or current_user.moderator?%>
->>>>>>> ImplementPundit
     <div class="ui dropdown item">
         View <i class="dropdown icon"></i>
         <div class="menu">
