@@ -25,11 +25,28 @@ Rails.application.configure do
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
+
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
 
   # Store uploaded files on the local file system in a temporary directory
   config.active_storage.service = :test
+
+  # Default Mailer URL
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => "https://employee-management-system-davfount45.c9users.io" }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "smtp.google.com",
+    port: 587,
+    domain: "https://employee-management-system-davfount45.c9users.io",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
 
   config.action_mailer.perform_caching = false
 
